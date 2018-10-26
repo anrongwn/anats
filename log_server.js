@@ -15,7 +15,7 @@ log4js.configure({
             alwaysIncludePattern: 'true',
             layout: {
                 type: 'pattern',
-                pattern: '[%d{yyyy-MM-dd hh:mm:ss.SSS}] [%c] [%5.5p]   %m'
+                pattern: '[%d{yyyy-MM-dd hh:mm:ss.SSS}] [%5.5p]   %m'
             }
         },
         server: {

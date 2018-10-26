@@ -27,7 +27,7 @@ const listen_port = 9595;
 const numCPUS = require('os').cpus().length;
 
 process.on('SIGINT', () => {
-    console.log(`Received SIGINT.  process:${process.pid} exit(1).`);
+    console.log(`app Received SIGINT.  process:${process.pid} exit(1).`);
 
     process.exit(1);
 });
