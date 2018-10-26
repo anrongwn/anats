@@ -1,0 +1,8 @@
+//private key
+genrsa -out an_pr_key.pem 1024
+
+//PKCS8
+pkcs8 -topk8 -inform PEM -in an_pr_key.pem -outform PEM -nocrypt
+
+//public key
+rsa -in an_pr_key.pem -pubout -out an_pu_key.pem

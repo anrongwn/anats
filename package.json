@@ -1,0 +1,25 @@
+{
+  "name": "anats",
+  "version": "1.0.0",
+  "description": "anrong's at server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "anrong",
+	"cluster",
+	"crypto",
+	"log4js",
+	"stickpackage",
+	"tcp-server"
+  ],
+  "author": "anrong_wn",
+  "license": "MIT",
+  "dependencies": {
+    "assert": "^1.4.1",
+    "assert-plus": "^1.0.0",
+    "log4js": "^3.0.6",
+    "nrm": "^1.0.2"
+  }
+}

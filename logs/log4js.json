@@ -1,0 +1,28 @@
+{
+    "appenders": {
+        "console": {
+            "type": "console"
+        },
+        "date_log": {
+            "type": "datefile",
+            "filename": "./logs/anats",
+            "pattern": "-yyyy-MM-dd.log",
+            "alwaysIncludePattern": true,
+            "layout": {
+                "type": "pattern",
+                "pattern": "[%d{yyyy-MM-dd hh:mm:ss.SSS}] [%c] [%5.5p]   %m"
+            }
+        }
+    },
+    "categories": {
+        "default": {
+            "appenders": ["console"],
+            "level": "ALL"
+        },
+        "date_log": {
+            "appenders": ["console", "date_log"],
+            "level": "ALL"
+        }
+    }
+
+}
