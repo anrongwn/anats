@@ -88,7 +88,7 @@ function writeLog(level, data) {
             log.fatal(contxt);
             break;
         default:
-            log.INFO(contxt);
+            log.trace(contxt);
             break;
     }
 }
