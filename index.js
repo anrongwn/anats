@@ -1,8 +1,8 @@
 /**
  * 单进程服务
  */
-
 'use strict';
+
 const net = require('net');
 const stick = require('./lib/core');
 const msgCenter = require('./lib/msgCenter');
