@@ -19,7 +19,12 @@ const {
 
 const {
     connectLogServer,
-    log_info
+    log_info,
+    log_debug,
+    log_trace,
+    log_warn,
+    log_error,
+    log_fatal
 } = require('./log_client.js');
 
 const listen_port = 9595;
@@ -36,7 +41,7 @@ if (cluster.isMaster) {
     //启动日志服务
     connectLogServer();
 
-    log_info(`master-${process.pid} start..., cpus=${numCPUS}`);
+    log_debug(`master-${process.pid} start..., cpus=${numCPUS}`);
     console.log(`master-${process.pid} start..., cpus=${numCPUS}`);
 
     for (let i = 0; i < numCPUS; ++i) {
@@ -45,7 +50,7 @@ if (cluster.isMaster) {
 
     cluster.on('fork', (worker) => {
         console.log(`master fork worker : ${worker.id}, ${worker.process.pid}`);
-        log_info(`master fork worker : ${worker.id}, ${worker.process.pid}`);
+        log_debug(`master fork worker : ${worker.id}, ${worker.process.pid}`);
     });
 
     cluster.on('online', (worker) => {
@@ -118,6 +123,6 @@ if (cluster.isMaster) {
     });
     tcp_server.listen(listen_port, () => {
         console.log(`${process.pid}===tcp_server listening on ${listen_port}...`);
-        log_info(`${process.pid}===tcp_server listening on ${listen_port}...`);
+        log_debug(`${process.pid}===tcp_server listening on ${listen_port}...`);
     });
 };
