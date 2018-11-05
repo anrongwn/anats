@@ -2,6 +2,7 @@
 
 const net = require('net');
 const log4js = require('log4js');
+const EventEmitter = require('events').EventEmitter;
 
 /**
  * 启动日志服务
@@ -39,10 +40,28 @@ process.on('SIGINT', () => {
     process.exit(1);
 });
 
-
+/*
 let server = net.createServer((socket)=>{
+});
+server.listen(0);
+*/
+
+/*
+const _event = new EventEmitter();
+_event.on('data', (data)=>{
 
 });
+*/
+
 let log = log4js.getLogger('logServer');
 log.info(`log server[${process.pid}] is starting...`);
-server.listen(0);
+
+/**
+ * 
+ */
+(function run(){
+    setInterval(()=>{
+
+    }, 30000);
+})();
+

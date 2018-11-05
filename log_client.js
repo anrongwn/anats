@@ -31,6 +31,10 @@ function connectLogServer() {
     log_server.on('error', (err) => {
         console.log(`log server child_process start err : ${err}`);
     });
+
+    log_server.on('exit', (code, signal)=>{
+        console.log(`log server child_process exit code: ${code}, signal: ${signal}`);
+    });
 };
 
 /**
